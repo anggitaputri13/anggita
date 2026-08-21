@@ -1,6 +1,4 @@
-print("hello world")
-# print("halllo dunia")
-print("Halo Apa Kabar?");  
+  
 print("\n Selamat datang di Lab. Teknologi Informasi");  print("\n Universitas Tidar");  
 
 print("Identitas Mahasiswa")
