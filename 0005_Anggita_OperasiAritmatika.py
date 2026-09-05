@@ -24,6 +24,7 @@ print(a,"%",b,"=",hasil)
 hasil = a // b 
 print(a,"//",b,"=",hasil)
 
+
 # Program 3.2 konversi celcius ke satuan lain
 print("PROGRAM KONVERSI TEMPERATUR")
 # program konversi celcius ke satuan lain 
@@ -38,6 +39,7 @@ print("Suhu dalam fahrenheit adalah ", fahrenheit, "Fahrenheit")
 # kelvin 
 kelvin = celcius + 273 
 print("Suhu dalam kelvin adalah ", kelvin, "Kelvin") 
+
 
 #Program 3.3  Operasi komperasi 
 # setiap hasil dari operasi komperasi adalah boolean   
@@ -87,7 +89,19 @@ print("=============== sama dengan (!=)")
 hasil = a != 8
 print(a,"!=",8,"=",hasil) 
 hasil = b != 8
-print(b,"!=",8,"=",hasil) 
+print(b,"!=",8,"=",hasil)
+#is sebagai komparasi objek identity
+print("=============== is") 
+x = 5 
+y = 5 
+hasil = x is y
+print("x is y =",hasil) 
+#is not sebagai komparasi objek identity (bukan literal) 
+print("=============== is not") 
+x = 5 
+y = 6 
+hasil = x is not y 
+print("x is not y =",hasil)
 
 #PENUGASAN
 #sebuah bangunan dengan nilai
