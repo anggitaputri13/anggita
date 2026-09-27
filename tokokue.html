@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights - Toko Kue & Bakery</title>
+    <style>
+        /* ==========================================
+           RESET & BASIC STYLES
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-pink: #ff6b8b;
+            --light-pink: #fff0f3;
+            --soft-pink: #ffb3c1;
+            --dark-pink: #c9184a;
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+            --card-shadow: 0 10px 20px rgba(255, 107, 139, 0.15);
+        }
+
+        body {
+            background-color: #fff8f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           HEADER & NAVIGATION
+           ========================================== */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-pink);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-pink);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            background: linear-gradient(135deg, var(--light-pink) 0%, #ffe3e8 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--dark-pink);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--primary-pink);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           ABOUT SECTION
+           ========================================== */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--dark-pink);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--soft-pink);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .about-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #ffe3e8;
+            text-align: center;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           PRODUCTS SECTION
+           ========================================== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid #ffe3e8;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            color: var(--dark-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 1.2rem;
+        }
+
+        .btn-wa {
+            display: block;
+            text-align: center;
+            background-color: #25d366;
+            color: var(--white);
+            padding: 0.7rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-wa:hover {
+            background-color: #128c7e;
+        }
+
+        /* ==========================================
+           LOCATION / ADDRESS SECTION
+           ========================================== */
+        .location-container {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #ffe3e8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .location-details {
+            flex: 1 1 300px;
+        }
+
+        .location-details h3 {
+            color: var(--dark-pink);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-details p {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .map-placeholder {
+            flex: 1 1 300px;
+            background-color: var(--light-pink);
+            height: 250px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark-pink);
+            font-weight: 600;
+            border: 2px dashed var(--soft-pink);
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--dark-pink);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           RESPONSIVE DESIGN
+           ========================================== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Sweet<span>Delights</span></a>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#produk">Menu Kue</a></li>
+                <li><a href="#alamat">Alamat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Manisnya Kebahagiaan di Setiap Gigitan 💕</h1>
+            <p>Dibuat dengan bahan premium, kehangatan cinta, dan resep otentik yang siap memanjakan lidah Anda.</p>
+            <a href="#produk" class="btn-cta">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- TENTANG TOKO -->
+    <section id="tentang" class="section">
+        <h2 class="section-title">Tentang Toko Kami</h2>
+        <div class="about-card">
+            <p>
+                <strong>Sweet Delights</strong> berdiri sejak tahun 2020 dengan komitmen menyajikan berbagai macam kue basah, kue ulang tahun, dan pastry berkualitas tinggi. Kami hanya menggunakan bahan-bahan segar pilihan tanpa pengawet buatan. Setiap produk dibuat secara higienis oleh para baker profesional kami untuk memastikan rasa manis yang pas dan tekstur yang sempurna.
+            </p>
+        </div>
+    </section>
+
+    <!-- PRODUK / MENU KUE -->
+    <section id="produk" class="section">
+        <h2 class="section-title">Menu Favorit Kami</h2>
+        <div class="product-grid">
+
+            <!-- KUE 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Strawberry Shortcake" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Strawberry Shortcake</h3>
+                    <p class="product-description">Kue bolu lembut dengan lapisan krim vanila segar dan potongan buah stroberi asli.</p>
+                    <div class="product-price">Rp 180.000</div>
+                    <!-- Ganti Nomor WA di bawah ini (gunakan format 628...) -->
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sweet%20Delights,%20saya%20ingin%20memesan%20Strawberry%20Shortcake" target="_blank" class="btn-wa">💬 Pesan via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- KUE 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Red Velvet Supreme" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Red Velvet Supreme</h3>
+                    <p class="product-description">Kue red velvet klasik yang kaya rasa dengan frosting cream cheese gurih dan lembut.</p>
+                    <div class="product-price">Rp 210.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sweet%20Delights,%20saya%20ingin%20memesan%20Red%20Velvet%20Supreme" target="_blank" class="btn-wa">💬 Pesan via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- KUE 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=600&q=80" alt="Pink Macarons Box" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Pink Macarons (Isi 10)</h3>
+                    <p class="product-description">Kue macaron khas Prancis dengan renyah di luar, lembut di dalam rasa mawar & raspberry.</p>
+                    <div class="product-price">Rp 95.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sweet%20Delights,%20saya%20ingin%20memesan%20Pink%20Macarons" target="_blank" class="btn-wa">💬 Pesan via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- KUE 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=600&q=80" alt="Choco Berry Drip" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Choco Berry Drip Cake</h3>
+                    <p class="product-description">Kombinasi sempurna cokelat pekat Belgia dengan hiasan buah berry segar di atasnya.</p>
+                    <div class="product-price">Rp 230.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sweet%20Delights,%20saya%20ingin%20memesan%20Choco%20Berry%20Drip" target="_blank" class="btn-wa">💬 Pesan via WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ALAMAT & LOKASI -->
+    <section id="alamat" class="section">
+        <h2 class="section-title">Lokasi & Jam Operasional</h2>
+        <div class="location-container">
+            <div class="location-details">
+                <h3>📍 Toko Sweet Delights</h3>
+                <p><strong>Alamat:</strong> Jl. Mawar Indah No. 123, Kota Melati, Indonesia</p>
+                <p><strong>Jam Buka:</strong> Senin - Minggu (08:00 - 20:00 WIB)</p>
+                <p><strong>WhatsApp:</strong> 0812-3456-7890</p>
+                <p><strong>Email:</strong> halo@sweetdelights.com</p>
+            </div>
+            <div class="map-placeholder">
+                📍 Area Peta / Google Maps
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Sweet Delights Bakery. All Rights Reserved. Made with ❤️ in Pink.</p>
+    </footer>
+
+</body>
+</html>
